@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.page{
+    position: fixed;
+    top:0;
+    left:100vw;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    transition: 0.6s all ease-in-out;
+}
+
+.visible{
+    left:0;
+}
+
+#page1{
+    background-color: lightskyblue;
+}
+
+#page2{
+    background-color: crimson;
+}
+
+#page3{
+    background-color: purple;
+}
+
+#page4{
+    background-color: gainsboro;
+}
+
+h1{
+    color:greenyellow;
+    font-family: Raleway;
+}
