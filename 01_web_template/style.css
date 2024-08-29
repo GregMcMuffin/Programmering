@@ -15,6 +15,19 @@ header{
     transition:all .3s ease-in-out;
 }
 
+
+.left {
+    background: linear-gradient(to bottom right, red, black);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
 header.hidden{
     height:2vh;
 }
