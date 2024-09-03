@@ -20,6 +20,8 @@ header {
     padding: 20px;
     border-radius: 10px;
     color: white;
+    /* .left to start at the left side, linear gradient to transition the color from red to black, with "to bottom right" to make it start at the top left, with red and black
+    being the colors */
 }
 
 p {
