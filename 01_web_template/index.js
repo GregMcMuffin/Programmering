@@ -11,16 +11,16 @@ function setup() {
     for (let m of menuItems) {
         m.mousePressed(function(e) {
             let nr = e.target.id.slice(-1); // Get the last character in a string
-            shiftPage(nr); // Switch to the page
+            shiftPage(nr); // Skift til siden
         });
     }
     
     shiftPage(currentPage);
-    //shiftPage is the function that takes a number and changes it to a page
+    //shiftPage er funktionen der tager en nummer og skifter det til en side
     setTimeout(function() {
         select('header').addClass('hidden');
-    }, 10000);
-    // Hide the menu after 10 seconds
+    }, 4000);
+    // Gemmer menuen efter 4 sekunder
 }
 
 function shiftPage(num) {
