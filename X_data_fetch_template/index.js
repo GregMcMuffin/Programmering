@@ -1,67 +1,93 @@
-let currentPage = 1;
+let currentPage = 1
 
-let pages; // Array containing all elements with class = page
-let menuItems; // Array containing all menu items
+let pages //array med alle elementer med class = page 
+let menuItems //array med alle menupunkterne  
 
-function setup() {
-    pages = selectAll('.page');
-    menuItems = selectAll('.menuitem');
-
-    // Menu items should switch pages when it reacts by the mousepressed function
-    for (let m of menuItems) {
-        m.mousePressed(function(e) {
-            let nr = e.target.id.slice(-1); // Get the last character in a string
-            shiftPage(nr); // Skift til siden
-        });
-    }
-    
-    shiftPage(currentPage);
-    //shiftPage er funktionen der tager en nummer og skifter det til en side
-    setTimeout(function() {
-        select('header').addClass('hidden');
-    }, 4000);
-    // Gemmer menuen efter 4 sekunder
+function setup(){
+    setupMenuStructure()
 }
 
-function shiftPage(num) {
-    if (num == "ArrowLeft") {
-        num = currentPage - 1;
-    }
-    if (num == "ArrowRight") {
-        num = currentPage + 1;
+function setupMenuStructure(){
+    pages = selectAll('.page')
+    menuItems = selectAll('.menuitem')
+
+    //menu items skal reagere ved at skifte side
+    for( m of menuItems ){
+        m.mousePressed( function(e) {
+            //e.target er selve html div'en 
+            console.log(e.target.id)
+            //slice -1 henter det sidste bogstav i en string
+            let nr = e.target.id.slice(-1)
+            //nu kan vi kalde shiftPage som skifter side
+            shiftPage(nr)
+        })
     }
 
-    if (isNaN(num) || num > pages.length || num == 0) {
-        return;
+    //shiftPage er funktionen der tager et tal og skifter til en side        
+    shiftPage(currentPage)
+    //vent to sekunder og sæt så klassen "hidden" på headeren - så menuen bliver væk
+    setTimeout(function(){
+        select('header').addClass('hidden')
+    }, 10000)
+
+}
+
+function pageTwo(){
+
+    //Først kalder vi server API'ets endpoint
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+
+    //så venter vi på serverens promise, der kommer tilbage med .then()
+    .then(
+        function(response){
+            //lad os tjekke om serverens response er okay
+            console.log(response)
+            //og hvis det er det, beder vi serveren om at give os json resultatet 
+            return response.json()
+        }
+    )
+    //og når DET så komer tilbage 
+    .then(
+        function (data){
+            //vi har nu en random drink
+            console.log(data)
+        }
+    )
+}
+
+function pageThree(){
+}
+
+function pageFour(){
+}
+
+function shiftPage(num){
+    if(num == "ArrowLeft"){
+        num = currentPage - 1
+    }
+    if(num == "ArrowRight"){
+        num = currentPage + 1
     }
 
-    select("#page" + currentPage).removeClass('visible');
-    select("#menu" + currentPage).removeClass('active');
-    currentPage = num;
-    select("#page" + currentPage).addClass('visible');
-    select("#menu" + currentPage).addClass('active');
+    if(isNaN(num) || num > pages.length || num == 0){
+        return
+    }
 
-    // Automatically displays the image if page 3 is the "active" page so to speak
-    if (currentPage == 3) {
-        displayImage();
+    select("#page" + currentPage).removeClass('visible')
+    select("#menu" + currentPage).removeClass('active')
+    currentPage = num
+    select("#page" + currentPage).addClass('visible')
+    select("#menu" + currentPage).addClass('active')
+
+    if(currentPage == 2) {
+        pageTwo()
+    }
+    if(currentPage == 3) {
+        pageThree()
     }
 }
 
-function displayImage() {
-    const imageUrl = "https://i.ibb.co/GPYK01Q/babadabooey.png"; // image URL
-
-    // I create an img element and set the src attribute to the URL
-    let imgElement = createImg(imageUrl, 'Uploaded image');
-    imgElement.style('max-width', '100%');
-    imgElement.style('height', 'auto');
-
-    // Set the image to the image container on page 3
-    let container = select('#imageContainer');
-    container.html(''); // Clear the container before adding a new image
-    container.child(imgElement);
+function keyPressed(){
+    console.log(key)
+    shiftPage(key)
 }
-
-function keyPressed() {
-    shiftPage(key);
-}
-
