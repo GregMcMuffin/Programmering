@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100vw;
+    height: 12vh;
+    position: fixed;
+    z-index: 2;
+    background-color: lightgray;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    transition: all .3s ease-in-out;
+}
+
+.left {
+    background: linear-gradient(to bottom right, red, black);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    /* .left to start at the left side, linear gradient to transition the color from red to black, with "to bottom right" to make it start at the top left, with red and black
+    being the colors */
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+header.hidden {
+    height: 2vh;
+}
+
+header.hidden:hover {
+    height: 12vh;
+}
+
+header#leftmenu {
+    width: 20vw;
+    height: 100vh;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, 10rem);
+}
+
+.menuitem {
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    display: grid;
+    place-items: center;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+
+.menuitem:hover {
+    border-bottom: 6px solid black;
+    font-size: 2.4rem;
+}
+
+.menuitem.active {
+    border-bottom: 6px solid steelblue;
+}
+
+header.hidden .menuitem {
+    font-size: 0;
+}
+
+header.hidden:hover .menuitem {
+    font-size: 2rem;
+}
+
+/* babadebobedy (her er en kommenter er hvad der stod tidligere) */
+
+.page {
+    position: fixed;
+    left: -100vw;
+    height: 100vh;
+    width: 100vw;
+    top: 0vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    transition: 0.3s 0.3s all ease-in-out;
+}
+
+.visible {
+    left: 0;
+    transition: 0.3s all ease-in-out;
+}
+
+#page1 {
+    background-color: lightskyblue;
+    grid-template-columns: 1fr 3fr;
+}
+
+#page1 .left {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+#page2 {
+    background-color: lightgreen;
+}
+
+/* same color as the color for the background of the descriptive text of fazeclan */
+#page3 {
+    background: linear-gradient(to bottom right, red, black);
+}
+
+#page4 {
+    background-color: lightsalmon;
+}
+
+h1 {
+    font-family: Raleway;
+    color: rgb(45, 209, 214);
+}
+/* Previous existing styles */
+
+#page2 {
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.member {
+    text-align: center;
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.member-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    color: darkgreen;
+}
+#page4 {
+    background-image:url(https://png.pngtree.com/background/20230610/original/pngtree-variety-of-drinks-sitting-on-a-dark-surface-picture-image_3098922.jpg); 
+
+}
