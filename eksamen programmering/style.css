@@ -1,0 +1,70 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images3.alphacoders.com/132/1322308.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+  }
+  
+  #searchInput {
+    padding: 0.5rem;
+    width: 50%;
+    max-width: 400px;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  #searchBtn {
+    padding: 0.5rem 1rem;
+    margin-left: 10px;
+    border: none;
+    background-color: #ff4e4e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  #animeList, #favorites {
+    margin: 20px;
+  }
+  
+  .anime-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 5px gray;
+    padding: 1rem;
+    margin: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: black;
+  }
+  
+  #startText {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    opacity: 0.8;
+  }
+  
