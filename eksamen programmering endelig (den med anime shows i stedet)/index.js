@@ -67,5 +67,5 @@ function addToFavorites(title) {
   }
   
 
-// Load favorites on page load
+// Loader favoritter når siden loader
 updateFavList();
