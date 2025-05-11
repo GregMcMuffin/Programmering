@@ -1,70 +1,71 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif; /* Skrifttypen */
     margin: 0;
     padding: 0;
-    background-image: url('https://images3.alphacoders.com/132/1322308.jpeg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    color: white;
+    background-image: url('https://images3.alphacoders.com/132/1322308.jpeg'); /* baggrundsbilledet */
+    background-size: cover; /* så billedet dækker hele baggrunden */
+    background-position: center; /* centrere billedet i baggrunden */
+    height: 100vh; /* gør siden lige så høj som skærmen via viewport height */
+    color: white; /* skriftfarven */
   }
   
+  /* laver et mørk gennemsigt lag oven på baggrunden */
   .overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-    min-height: 100vh;
-    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7); /* Sort farve med 70% gennemsigtighed */
+    min-height: 100vh; /*sikrer at den fylder hele højden ved at bruge den tidligere nævnte viewport height i sin helhed */
+    padding: 2rem; /* giver en 2rem afstand hele vejen rundt om fra top til bund, venstre og højre */
   }
-  
+  /* header området, altså titel og introteksten */
   header {
-    text-align: center;
-    margin-bottom: 2rem;
+    text-align: center; /*centrerer alt indhold i headeren */
+    margin-bottom: 2rem; /* giver igen lidt afstand under headeren */
   }
-  
+  /*overskrift i headeren */
   header h1 {
-    font-size: 3rem;
-    margin: 0.5rem 0;
+    font-size: 3rem; /* større skriftstørrelse til titlen */
+    margin: 0.5rem 0; /* lidt afstand over og under */
   }
-  
+  /*søgeinput feltet */
   #searchInput {
-    padding: 0.5rem;
-    width: 50%;
-    max-width: 400px;
-    margin-top: 1rem;
-    border: none;
-    border-radius: 8px;
+    padding: 0.5rem; /* igen den invendige afstand */
+    width: 50%; /* så feltet flyder halvdelen af containeres bredde */
+    max-width: 400px; /* dem maksimake bredde */
+    margin-top: 1rem; /*afstanden over feltet */
+    border: none; /* fjerner de ellers standarde kanter /* 
+    border-radius: 8px; /* runde hjørner */
   }
-  
+  /* søge knappen */
   #searchBtn {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem; 
     margin-left: 10px;
-    border: none;
-    background-color: #ff4e4e;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 8px;
+    border: none; /* fjerner standard kanter */
+    background-color: #ff4e4e; /* rød søge knap */
+    color: white; /* hvid tekst */ 
+    font-weight: bold; /* gør teksten fed */
+    cursor: pointer; /* gør desuden musemarkøreren til en hånd når man holder over søge knappen */
+    border-radius: 8px; /* runde hjørner igen */ 
   }
   
   #animeList, #favorites {
     margin: 20px;
   }
-  
+  /* stilen til hvert anime kort der bliver vist */
   .anime-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 5px gray;
-    padding: 1rem;
-    margin: 1rem 0;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    color: black;
+    background-color: white; /* baggrundsfarven på de diverse anime */
+    border-radius: 8px; /* runde hjørner */
+    box-shadow: 0 0 5px gray; /* let grå skygge effekt rundt om anime kortet */
+    padding: 1rem; /* lidt luft inde i kortet */
+    margin: 1rem 0; /* afstanden over og under hvert kot */ 
+    display: flex; /* gør det muligt at placere både billedet og teksten side om side */
+    gap: 1rem; /* mellemrum mellem de 2 ting i kortet */
+    align-items: center; /* centrere det */
+    color: black; /* Sort tekst inden i kortet */
   }
   
-  #startText {
-    text-align: center;
-    font-size: 1.5rem;
+  #startText { /* start tekst inde i søge feltet som viser den informerende besked "Søg efter en anime..." */
+    text-align: center;  /* centrere */
+    font-size: 1.5rem; /* Gør teksten 1.5 gange større end den standarde skriftstørrelse */
     margin-top: 2rem;
-    opacity: 0.8;
+    opacity: 0.8; /* Gør teksten let gennemsigtig (80% synlig, 20% gennemsigtighed) */ 
   }
   
